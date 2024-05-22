@@ -322,12 +322,9 @@ void wait_n_seconds(unsigned n) {
     initialize_lcd("Enter password..");
 }
 
-void read_temperature() {
-
-  delay(1000);
-}
-
 void loop() {
   // Read keys and check password loop, runs when in locked state
-	read_matrix_keypad_key();
+  if (locked_state) {
+    read_matrix_keypad_key();
+  }
 }
